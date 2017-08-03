@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+for arg in $@
+do
+    if [[ $arg == "--help" ]]
+    then
+    cat <<EOF
+usage : ./run 'staging' or 'prod'
+   or : ./debug 'staging' or 'prod'
+EOF
+        exit 0
+    fi
+done
+
+
+source ./scripts/build/start.sh
+
+start_application run $@

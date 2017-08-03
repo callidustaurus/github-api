@@ -1,0 +1,16 @@
+@import de.stema.pullrequests.dto.ProjectDTO
+@(projects: Seq[ProjectDTO], totalNumber: Int)
+
+<head>
+</head>
+<body>
+<h1>Fetched pull requests for @projects.size repositories  (@totalNumber open PRs total)</h1>
+
+    @projects.map { project =>
+        <h2>@project.name (@project.pullRequests.size)</h2>
+        @project.pullRequests.map { pr =>
+            <div>(@pr.user.login) <a href=@pr.html_url>@pr.title</a></div>
+        }
+    }
+</body>
+

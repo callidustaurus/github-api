@@ -1,0 +1,27 @@
+Small app to visualize all pull requests for your configured projects, depending on your company.
+
+copy your config-file to the "conf" folder. the name of this configfile represents also your url
+
+your config-file must contain the following entries:
+1. organization
+2. secret
+3. projects
+
+example:
+myConfigFile.conf
+-------------------------
+organization = "myOrga"
+secret = "my secret key"
+projects = [
+  "project1",
+  "project2"
+]
+----------------------------
+
+now you could see all your PRs at /pullrequests/myConfigFile
+
+start your app with ./run --> it will run on :9000
+
+you could add the parameter "offline" to to run against a sample client. No internet connection needed -> using a sample
+
+--> ./run offline
